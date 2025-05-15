@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+        .survey-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+        }
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .options {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .options input {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+        .options label {
+            font-size: 18px;
+            display: inline-block;
+            margin: 10px 0;
+            width: calc(100% - 50px);
+            text-align: left;
+        }
+        .options div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="survey-container">
+    <h1>Опрос для оценки опыта взаимодействия с СППР в социальных сетях.</h1>
+
+    <form id="surveyForm">
+        <div class="question">
+            <p>1. Выберите любимую социальную сеть</p>
+            <div class="options">
+                <div>
+                    <input type="checkbox" id="q1_telegram" name="q1" value="Telegram">
+                    <label for="q1_telegram">Telegram</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q1_vk" name="q1" value="Vk">
+                    <label for="q1_vk">Vk</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q1_youtube" name="q1" value="YouTube">
+                    <label for="q1_youtube">YouTube</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Как вы оцениваете алгоритм рекомендаций в перечисленных социальных сетях? Выберите те, на ваш взгляд, которые имеют лучшие алгоритм рекомендаций контента</p>
+            <div class="options">
+                <div>
+                    <input type="checkbox" id="q2_telegram" name="q2" value="Telegram">
+                    <label for="q2_telegram">Telegram</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q2_vk" name="q2" value="Vk">
+                    <label for="q2_vk">Vk</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q2_youtube" name="q2" value="YouTube">
+                    <label for="q2_youtube">YouTube</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. Сталкивались ли вы с контентом, который, по вашему мнению, нарушает правила платформы? Выбери соц. сети, в которых, на ваш взгляд, такого контента больше всего.</p>
+            <div class="options">
+                <div>
+                    <input type="checkbox" id="q3_telegram" name="q3" value="Telegram">
+                    <label for="q3_telegram">Telegram</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q3_vk" name="q3" value="Vk">
+                    <label for="q3_vk">Vk</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q3_youtube" name="q3" value="YouTube">
+                    <label for="q3_youtube">YouTube</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q3_none" name="q3" value="Not_answered">
+                    <label for="q3_none">Не сталкивался</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. Создаёте ли вы контент для социальных сетей? Выберите социальные сети, где вы публикуете больше контента и где это делать проще.</p>
+            <div class="options">
+                <div>
+                    <input type="checkbox" id="q4_telegram" name="q4" value="Telegram">
+                    <label for="q4_telegram">Telegram</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q4_vk" name="q4" value="Vk">
+                    <label for="q4_vk">Vk</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q4_youtube" name="q4" value="YouTube">
+                    <label for="q4_youtube">YouTube</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q4_none" name="q4" value="Not_answered">
+                    <label for="q4_none">Не создаю контент</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. Сталкивались ли вы с блокировкой/заморозкой вашего аккаунта без видимых на то причин? Выберите соц. сети, в которых вы сталкивались с блокировкой аккаунта</p>
+            <div class="options">
+                <div>
+                    <input type="checkbox" id="q5_telegram" name="q5" value="Telegram">
+                    <label for="q5_telegram">Telegram</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q5_vk" name="q5" value="Vk">
+                    <label for="q5_vk">Vk</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q5_youtube" name="q5" value="YouTube">
+                    <label for="q5_youtube">YouTube</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q5_none" name="q5" value="Not_answered">
+                    <label for="q5_none">Не сталкивался с блокировкой</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>6. Обращались ли вы в тех поддержку? Выберите социальные сети, в которых вы получили наиболее быстрые ответы.</p>
+            <div class="options">
+                <div>
+                    <input type="checkbox" id="q6_telegram" name="q6" value="Telegram">
+                    <label for="q6_telegram">Telegram</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q6_vk" name="q6" value="Vk">
+                    <label for="q6_vk">Vk</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q6_youtube" name="q6" value="YouTube">
+                    <label for="q6_youtube">YouTube</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q6_none" name="q6" value="Not_answered">
+                    <label for="q6_none">Не обращался в тех поддержку</label>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" onclick="showResults()">Завершить опрос</button>
+    </form>
+
+    <div id="resultContainer" class="result"></div>
+</div>
+
+<script>
+    function showResults() {
+        // Показываем информационное окно
+        alert("Спасибо за участие в опросе.");
+
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информационные технологии в социальных сетях</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            overflow-x: hidden; /* Добавлено для предотвращения горизонтального скролла */
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Чтобы не мешал взаимодействию с контентом */
+            z-index: -1; /* Чтобы был под контентом */
+        }
+
+        footer {
+            font-family: Arial, sans-serif;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px; /* Уменьшены внутренние отступы */
+            font-size: 16px; /* Уменьшен размер шрифта */
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+<!--            width: 150px; /* Фиксированная ширина кнопки */-->
+            text-align: center; /* Выравнивание текста по центру */
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+
+        }
+        p {
+            line-height: 1.58;
+            font-family: CustomSerif, Georgia, Cambria, 'Times New Roman', serif;
+            font-size: 18px;
+            font-style: normal;
+            color: rgba(0, 0, 0, .8);
+        }
+        h1 {
+            line-height: 1.58;
+            font-family: CustomSerif, Georgia, Cambria, 'Times New Roman', serif;
+            font-size: 36px;
+            font-style: normal;
+            color: rgba(0, 0, 0, .8);
+        }
+        .card-container {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+        .card {
+            border-radius: 10px;
+<!--            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);-->
+            margin: 20px;
+            padding: 20px;
+            width: 100px;
+            text-align: center;
+<!--            transition: transform 0.3s ease, background-color 0.3s ease;-->
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            background-color: #e0e0e0;
+        }
+        .card img {
+            width: 100%;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            line-height: 1.58;
+            font-family: CustomSerif, Georgia, Cambria, 'Times New Roman', serif;
+            font-size: 24px;
+            font-style: normal;
+            margin: 0;
+            color: rgba(0, 0, 0, .8);
+        }
+        .card p {
+            font-size: 16px;
+            color: rgba(0, 0, 0, .8);
+        }
+        .info-container {
+            font-size: 20px;
+            text-align: left;
+        }
+        .text-container {
+            margin-top: 40px;
+            font-size: 20px;
+            color: #333;
+            text-align: left;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+        }
+        .text-container.active {
+            display: block;
+        }
+        .text-container h3 {
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .text-container p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .text-center {
+            text-align: center;
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1>Интеллектуальные технологии в социальных сетях.</h1>
+            <h1>Система поддержки принятия решений</h1>
+        </div>
+        <div class="info-container">
+            <p>
+                Социальные сети давно вышли за пределы простого общения.
+                Они стали платформами для обмена информацией, торговли, образования, а также для автоматизации множества процессов.
+                В последние годы большое внимание уделяется интеграции интеллектуальных технологий в эти системы, чтобы улучшить взаимодействие пользователей, сделать платформы более удобными и повысить их эффективность.
+                Одним из ключевых элементов таких технологий являются <b>системы поддержки принятия решений (СППР)</b>, которые активно внедряются в популярные социальные сети.
+            </p>
+            <div style="text-align: center;">
+                <a href="survey.html"><button class="button">Опрос для оценки опыта взаимодействия с СППР в различных соц сетях
+                </button>
+                </a>
+            </div>
+            <p class="text-center">Выберите социальную сеть и узнайте, как <b>СППР</b> реализуются в ней.</p>
+        </div>
+        <div class="card-container">
+            <div class="card" onclick="showText('telegram')">
+                <img src="tg_logo.png" alt="Telegram">
+                <h2>Telegram</h2>
+            </div>
+            <div class="card" onclick="showText('vkontakte')">
+                <img src="vk_logo.png" alt="ВКонтакте">
+                <h2>VK</h2>
+            </div>
+            <div class="card" onclick="showText('youtube')">
+                <img src="you_tube.png" alt="YouTube">
+                <h2>YouTube</h2>
+            </div>
+        </div>
+        <div class="text-container" id="telegram">
+            <h3>Telegram</h3>
+            <p>Telegram — кроссплатформенный мессенджер. Основан в 2013 году Павлом и Николаем Дуровыми.</p>
+            <p>По состоянию на июль 2024 года Telegram насчитывает более 950 миллионов ежемесячных активных пользователей.</p>
+            <h3>1. Алгоритмы рекомендаций: персонализированный контент для каждого</h3>
+            <p>В Telegram алгоритмы рекомендаций работают в каналах и группах. Они анализируют контент, который публикуется в каналах и группах, профили подписчиков этих каналов и предлагают подписаться на похожие каналы.</p>
+            <h3>2. Фильтрация контента</h3>
+            <p>В Telegram фильтрация контента осуществляется с помощью поиска и тегов. Вы можете искать сообщения по ключевым словам, авторам и каналам, а также использовать теги для быстрого поиска похожих сообщений.</p>
+            <p><b>Поиск по ключевым словам:</b> В 2022 году Telegram обновил алгоритм поиска по ключевым словам. По данным Telegram, скорость поиска увеличилась на 50%, а количество найденных сообщений – на 30%.</p>
+            <p><b>Теги:</b> В 2023 году Telegram добавил возможность использования тегов в каналах и группах. По данным Telegram, каналы и группы, которые используют теги, получают на 15% больше просмотров, чем каналы и группы, которые не используют теги.</p>
+            <h3>3. Блокировка аккаунтов и защита от спама</h3>
+            <p>Telegram использует алгоритмы машинного обучения для обнаружения и блокировки спам-аккаунтов. Пользователи также могут блокировать отдельных пользователей и сообщения, а также использовать функцию "Не беспокоить".</p>
+            <p><b>Блокировка спам-аккаунтов:</b> В 2022 году Telegram заблокировал более 1 миллиона спам-аккаунтов в месяц.</p>
+            <p><b>Функция "Не беспокоить":</b> В 2023 году Telegram добавил новую функцию "Не беспокоить". По данным Telegram, пользователи, которые используют эту функцию, сообщают о повышении комфорта использования мессенджера на 30%.</p>
+            <h3>4. Telegram-боты: интеллектуальные помощники для всего</h3>
+            <p>Telegram-боты – это одно из ключевых преимуществ Telegram. Они могут выполнять множество задач: от отправки уведомлений и новостей до управления задачами и оплаты услуг.</p>
+            <p><b><a href="https://t.me/chatkeeperbot">@ChatKeeperBot:</a></b> - Бот-помощник для модерации чатов.</p>
+        </div>
+        <div class="text-container" id="vkontakte">
+            <h3>VK</h3>
+            <p>«ВКонтакте» — российская социальная сеть со штаб-квартирой в Санкт-Петербурге. Запущена в 2006 году Павлом Дуровым.</p>
+            <h3>Персонализированные рекомендации и алгоритмы контента</h3>
+            <h3>1. Алгоритмы рекомендаций</h3>
+            <p>ВКонтакте использует сложный алгоритм рекомендаций, который учитывает ваши интересы, друзей, группы, музыку, видео и многое другое. Например, если вы часто слушаете рок-музыку, ВКонтакте предложит вам подписаться на группы, посвященные этому жанру, и показать вам видео с концертов ваших любимых исполнителей.</p>
+            <p><b>Рекомендации друзей:</b> ВКонтакте обновил алгоритм рекомендаций друзей. По данным ВКонтакте, количество новых друзей, которые пользователи добавляют благодаря рекомендациям, увеличилось на 15%.</p>
+            <p><b>Рекомендации музыки:</b> ВКонтакте запустил новую функцию рекомендаций музыки. По данным ВКонтакте, пользователи, которые используют эту функцию, слушают на 20% больше музыки, чем пользователи, которые не используют эту функцию.</p>
+            <h3>2. Фильтрация контента</h3>
+            <p>ВКонтакте предлагает широкий спектр инструментов для фильтрации контента: от сортировки новостей по источникам и темам до использования скрытых списков для блокировки нежелательных пользователей.</p>
+            <p><b>Сортировка новостей: </b> появилась возможность скрывать неинтересные записи из своей ленты. По данным ВКонтакте, пользователи, которые используют эту функцию, проводят на 10% больше времени в социальной сети.</p>
+            <h3>3. Помощь в публикации и продвижении контента.</h3>
+            <p>ВКонтакте предлагает широкий спектр инструментов для продвижения контента, включая рекламные объявления, репосты и интеграцию с другими сервисами. Авторы контента могут использовать аналитику для отслеживания эффективности своих кампаний и корректировки их на основе данных.</p>
+            <p><b>Рекламные объявления: </b>ВКонтакте обновил алгоритм показа рекламных объявлений. По данным ВКонтакте, количество кликов по рекламным объявлениям увеличилось на 15%.</p>
+            <h3>4. Блокировка аккаунтов и защита от спама</h3>
+            <p>ВКонтакте использует комплексный подход к бо рьбе со спамом, включая автоматическую фильтрацию сообщений, блокировку спам-аккаунтов и привлечение пользователей к борьбе со спамом.</p>
+            <p><b>Фильтрация сообщений и комментариев: </b> В 2021 году ВКонтакте обновил алгоритм фильтрации сообщений. По данным ВКонтакте, количество спам-сообщений, которые удаляются автоматически, увеличилось на 20%.</p>
+            <p><b>Блокировка спам-аккаунтов:</b> В 2023 году ВКонтакте заблокировал более 10 миллионов спам-аккаунтов.</p>
+        </div>
+        <div class="text-container" id="youtube">
+            <h3>YouTube</h3>
+            <p>YouTube — самый популярный видеохостинг в мире. Запущен в 2005 году. </p>
+            <h3>1. Алгоритмы рекомендаций</h3>
+            <p>YouTube – это лидер в области алгоритмов рекомендаций. Его алгоритм анализирует ваши просмотры, поисковые запросы, продолжительность просмотра и многое другое, чтобы предложить вам наиболее интересные видео.</p>
+            <p><b>Рекомендации видео:</b> YouTube обновил алгоритм рекомендаций видео. По данным YouTube, количество просмотров рекомендованных видео увеличилось на 25%.</p>
+            <p><b>Рекомендации каналов:</b> YouTube запустил новую функцию рекомендаций каналов. По данным YouTube, количество подписчиков на рекомендованные каналы увеличилось на 15%.</p>
+            <h3>2. Фильтрация контента</h3>
+            <p>YouTube использует алгоритмы машинного обучения для фильтрации контента на основе ваших интересов и предыдущих просмотров. Вы также можете использовать инструменты для управления подписками и создания плейлистов для более эффективного управления контентом.</p>
+            <p><b>Фильтрация видео:</b> за 2023 год YouTube удалил более 7 миллионов видео, нарушающих правила платформы, в том числе спам-видео.</p>
+            <p><b></b></p>
+            <h3>3. Помощь в публикации и продвижении контента.</h3>
+            <p>YouTube предлагает множество инструментов для продвижения контента, включая рекламные объявления, партнерские программы и интеграцию с другими платформами. Авторы контента могут использовать аналитику YouTube для отслеживания просмотров, вовлеченности и доходов, а также для оптимизации своих видео.</p>
+            <h3>4. Блокировка аккаунтов и защита от спама</h3>
+            <p>Платформа ежедневно удаляет десятки тысяч спам-комментариев.</p>
+        </div>
+    </div>
+    <footer>
+        <p class="text-center">Федоров Федор, ИУ3-33Б</p>
+        <p class="text-center">2024</p>
+    </footer>
+
+
+    <script>
+        function changeCardContainerColor(color) {
+            document.querySelector('.card-container').style.backgroundColor = color;
+        };
+
+        function highlightCard(clickedCard) {
+            // Сбросить цвет всех карточек
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.backgroundColor = '#fff';
+            });
+
+            // Установить цвет выбранной карточки
+            clickedCard.style.backgroundColor = '#f3f3f3';
+        };
+
+        function changeBackgroundColor(color) {
+            document.body.style.background = color;
+            document.querySelector('body::after').style.background = color;
+        };
+
+        function showText(id) {
+            // Скрыть все текстовые контейнеры
+            const textContainers = document.querySelectorAll('.text-container');
+            textContainers.forEach(container => {
+                container.classList.remove('active');
+            });
+
+            // Показать выбранный текстовый контейнер
+            const selectedContainer = document.getElementById(id);
+            selectedContainer.classList.add('active');
+
+            // Изменить цвет фона в зависимости от выбранной карточки
+            switch (id) {
+                case 'telegram':
+                    changeBackgroundColor('radial-gradient(circle, rgba(255,255,255,1) 70%, #2AABEE 130%)');
+                    break;
+                case 'vkontakte':
+                    changeBackgroundColor('radial-gradient(circle, rgba(255,255,255,1) 70%, #0077ff 130%)');
+                    break;
+                case 'youtube':
+                    changeBackgroundColor('radial-gradient(circle, rgba(255,255,255,1) 70%, #FF0000 130%)');
+                    break;
+                default:
+                    changeBackgroundColor('rgb(255,255,255)');
+            };
+        };
+    </script>
+
+</body>
+</html>
+
+# библиотека МГТУ -> системы поддержки принятия решений | подяновский теории и методы анализа
